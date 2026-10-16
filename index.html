@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Đăng ký người dùng</title>
+        <title>Market Research Survey</title>
         <style>
             :root {
                 color-scheme: light;
@@ -22,7 +22,7 @@
             }
 
             .page-header {
-                padding: 30px max(24px, calc((100% - 960px) / 2));
+                padding: 30px max(24px, calc((100% - 760px) / 2));
                 color: #f8faf7;
                 background: #173c39;
                 border-bottom: 5px solid #d47752;
@@ -50,7 +50,7 @@
             }
 
             main {
-                width: min(960px, calc(100% - 40px));
+                width: min(760px, calc(100% - 40px));
                 margin: 0 auto;
                 padding: 26px 0 56px;
             }
@@ -196,6 +196,148 @@
                 filter: brightness(0.94);
             }
 
+            .survey-intro {
+                margin: 0 0 8px;
+                color: #526764;
+                font-size: 15px;
+            }
+
+            .survey-question {
+                padding: 19px 0;
+                border-bottom: 1px solid #d6dfda;
+            }
+
+            fieldset.survey-question {
+                padding-right: 0;
+                padding-left: 0;
+                border: 0;
+                border-bottom: 1px solid #d6dfda;
+                border-radius: 0;
+            }
+
+            .question-title {
+                display: block;
+                margin: 0 0 11px;
+                color: #183332;
+                font-size: 15px;
+                font-weight: 700;
+            }
+
+            .survey-question select {
+                width: min(100%, 440px);
+            }
+
+            .choice-stack {
+                display: grid;
+                gap: 9px;
+            }
+
+            .choice-stack .choice {
+                width: fit-content;
+                min-height: 24px;
+                color: #344c49;
+            }
+
+            .other-detail {
+                width: min(100%, 220px) !important;
+                min-height: 38px !important;
+                margin-left: 25px;
+            }
+
+            .price-fields {
+                display: flex;
+                align-items: end;
+                gap: 8px;
+            }
+
+            .price-part {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                color: #526764;
+                font-size: 12px;
+            }
+
+            .price-part input {
+                width: 130px;
+                min-height: 42px;
+                padding: 9px 11px;
+                border: 1px solid #aebdb5;
+                border-radius: 3px;
+                background: #fff;
+                color: #183332;
+                font: inherit;
+                font-size: 15px;
+            }
+
+            .survey-question textarea {
+                min-height: 112px;
+            }
+
+            .matrix-scroll {
+                overflow-x: auto;
+                border: 1px solid #d0dcd6;
+                border-radius: 3px;
+            }
+
+            .matrix-table {
+                width: 100%;
+                min-width: 620px;
+                border-collapse: collapse;
+                background: #fff;
+                font-size: 13px;
+            }
+
+            .matrix-table caption {
+                padding: 0 0 10px;
+                color: #183332;
+                font-size: 15px;
+                font-weight: 700;
+                text-align: left;
+            }
+
+            .matrix-table th,
+            .matrix-table td {
+                padding: 10px 8px;
+                border-bottom: 1px solid #e0e7e3;
+                text-align: center;
+            }
+
+            .matrix-table thead th {
+                color: #fff;
+                background: #285a54;
+                font-weight: 600;
+            }
+
+            .matrix-table thead th:first-child {
+                width: 42%;
+                text-align: left;
+            }
+
+            .matrix-table tbody th {
+                text-align: left;
+                font-weight: 600;
+            }
+
+            .matrix-table tbody tr:last-child th,
+            .matrix-table tbody tr:last-child td {
+                border-bottom: 0;
+            }
+
+            .matrix-table input {
+                width: 16px;
+                height: 16px;
+                accent-color: #1e665b;
+            }
+
+            .survey-status {
+                margin: 15px 0 0;
+                padding: 12px 14px;
+                border-left: 4px solid #d47752;
+                background: #f2f5f1;
+                color: #183332;
+            }
+
             @media (max-width: 620px) {
                 .page-header {
                     padding: 25px 20px;
@@ -223,43 +365,131 @@
     </head>
     <body>
         <header class="page-header">
-            <p>Bài thực hành HTML</p>
-            <h1>Đăng ký người dùng</h1>
+            <p>Customer Research</p>
+            <h1>Market Research Survey</h1>
         </header>
         <main>
-            <section class="form-section" aria-labelledby="registration-title">
+            <section class="form-section" aria-labelledby="survey-title">
                 <div class="section-heading">
-                    <span class="section-number">ĐĂNG KÝ</span>
-                    <h2 id="registration-title">Thông tin người dùng</h2>
+                    <span class="section-number">YOUR FEEDBACK</span>
+                    <h2 id="survey-title">Customer satisfaction</h2>
                 </div>
-                <form action="http://demo.codegym.vn/6/registration_form/register.php" method="POST">
-                    <div class="field-grid">
-                        <label class="field">
-                            Họ và tên
-                            <input type="text" name="name" autocomplete="name" required>
-                        </label>
-                        <label class="field">
-                            Email
-                            <input type="email" name="email" autocomplete="email" required>
-                        </label>
-                        <label class="field">
-                            Số điện thoại
-                            <input type="tel" name="phone" autocomplete="tel" required>
-                        </label>
-                        <fieldset>
-                            <legend>Giới tính</legend>
-                            <div class="choices">
-                                <label class="choice"><input type="radio" name="gender" value="male" required> Nam</label>
-                                <label class="choice"><input type="radio" name="gender" value="female"> Nữ</label>
-                                <label class="choice"><input type="radio" name="gender" value="other"> Khác</label>
-                            </div>
-                        </fieldset>
+                <p class="survey-intro">Please take a few moments to complete this satisfaction survey.</p>
+                <form id="survey-form" method="post">
+                    <div class="survey-question">
+                        <label class="question-title" for="age-range">What is your age range?</label>
+                        <select id="age-range" name="age_range" required>
+                            <option value="" disabled selected>Select an age range</option>
+                            <option value="18-24">18-24</option>
+                            <option value="25-34">25-34</option>
+                            <option value="35-50">35-50</option>
+                            <option value="50+">50+</option>
+                        </select>
+                    </div>
+                    <div class="survey-question">
+                        <label class="question-title" for="income-range">What is your yearly income range?</label>
+                        <select id="income-range" name="income_range" required>
+                            <option value="" disabled selected>Select an income range</option>
+                            <option value="0-25000">$0 - $25,000</option>
+                            <option value="25001-50000">$25,001 - $50,000</option>
+                            <option value="50001-100000">$50,001 - $100,000</option>
+                            <option value="100000+">$100,000+</option>
+                        </select>
+                    </div>
+                    <fieldset class="survey-question">
+                        <legend class="question-title">Gender Identity</legend>
+                        <div class="choice-stack">
+                            <label class="choice"><input type="radio" name="gender" value="male" required> Male</label>
+                            <label class="choice"><input type="radio" name="gender" value="female"> Female</label>
+                            <label class="choice"><input type="radio" name="gender" value="nonbinary"> Nonbinary</label>
+                            <label class="choice"><input type="radio" name="gender" value="other"> Other</label>
+                            <input class="other-detail" type="text" name="gender_other" aria-label="Please specify other gender">
+                        </div>
+                    </fieldset>
+                    <fieldset class="survey-question">
+                        <legend class="question-title">Which products have you purchased in the last 2 months? Check all that apply.</legend>
+                        <div class="choice-stack">
+                            <label class="choice"><input type="checkbox" name="products[]" value="product-1"> Product 1</label>
+                            <label class="choice"><input type="checkbox" name="products[]" value="product-2"> Product 2</label>
+                            <label class="choice"><input type="checkbox" name="products[]" value="product-3"> Product 3</label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="survey-question">
+                        <legend class="question-title">How often would you use our new product?</legend>
+                        <div class="choice-stack">
+                            <label class="choice"><input type="radio" name="usage_frequency" value="daily" required> Daily</label>
+                            <label class="choice"><input type="radio" name="usage_frequency" value="weekly"> Weekly</label>
+                            <label class="choice"><input type="radio" name="usage_frequency" value="monthly"> Monthly</label>
+                        </div>
+                    </fieldset>
+                    <div class="survey-question">
+                        <span class="question-title" id="price-question">What would you pay for the new product?</span>
+                        <div class="price-fields" aria-labelledby="price-question">
+                            <span aria-hidden="true">$</span>
+                            <label class="price-part"><span>Dollars</span><input type="number" name="price_dollars" min="0" step="1" aria-label="Dollars"></label>
+                            <span aria-hidden="true">.</span>
+                            <label class="price-part"><span>Cents</span><input type="number" name="price_cents" min="0" max="99" step="1" aria-label="Cents"></label>
+                        </div>
+                    </div>
+                    <div class="survey-question">
+                        <label class="question-title" for="features">What features would you like to see in the new product?</label>
+                        <textarea id="features" name="features" rows="4"></textarea>
+                    </div>
+                    <div class="survey-question">
+                        <div class="matrix-scroll">
+                            <table class="matrix-table">
+                                <caption>Please rate your level of agreement with the following statements.</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Strongly Disagree</th>
+                                        <th scope="col">Disagree</th>
+                                        <th scope="col">Agree</th>
+                                        <th scope="col">Strongly Agree</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Our products are priced fairly.</th>
+                                        <td><input type="radio" name="price_fairness" value="1" aria-label="Strongly disagree: products are priced fairly"></td>
+                                        <td><input type="radio" name="price_fairness" value="2" aria-label="Disagree: products are priced fairly"></td>
+                                        <td><input type="radio" name="price_fairness" value="3" aria-label="Agree: products are priced fairly"></td>
+                                        <td><input type="radio" name="price_fairness" value="4" aria-label="Strongly agree: products are priced fairly"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Our products are high quality.</th>
+                                        <td><input type="radio" name="product_quality" value="1" aria-label="Strongly disagree: products are high quality"></td>
+                                        <td><input type="radio" name="product_quality" value="2" aria-label="Disagree: products are high quality"></td>
+                                        <td><input type="radio" name="product_quality" value="3" aria-label="Agree: products are high quality"></td>
+                                        <td><input type="radio" name="product_quality" value="4" aria-label="Strongly agree: products are high quality"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">You would recommend our product to a friend or coworker.</th>
+                                        <td><input type="radio" name="recommendation" value="1" aria-label="Strongly disagree: recommend the product"></td>
+                                        <td><input type="radio" name="recommendation" value="2" aria-label="Disagree: recommend the product"></td>
+                                        <td><input type="radio" name="recommendation" value="3" aria-label="Agree: recommend the product"></td>
+                                        <td><input type="radio" name="recommendation" value="4" aria-label="Strongly agree: recommend the product"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="form-actions">
-                        <button type="submit">Gửi đăng ký</button>
+                        <button type="submit">Submit survey</button>
                     </div>
+                    <p class="survey-status" id="survey-status" role="status" aria-live="polite" hidden></p>
                 </form>
             </section>
         </main>
+        <script>
+            const surveyForm = document.getElementById("survey-form");
+            const surveyStatus = document.getElementById("survey-status");
+
+            surveyForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+                surveyStatus.hidden = false;
+                surveyStatus.textContent = "Thank you. This local preview does not send responses to a server.";
+            });
+        </script>
     </body>
 </html>
