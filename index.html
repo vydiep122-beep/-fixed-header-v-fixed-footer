@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lịch họp công ty</title>
+        <title>CSS Box Model</title>
         <style>
             :root {
                 color-scheme: light;
@@ -412,44 +412,31 @@
                 }
             }
         </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header class="page-header">
-            <p>LỊCH LÀM VIỆC</p>
-            <h1>Lịch họp công ty</h1>
+            <p>CSS FUNDAMENTALS</p>
+            <h1>Mô hình hộp CSS</h1>
         </header>
         <main>
-            <div class="table-wrap">
-                <table class="product-table">
-                    <caption>Lịch họp và nội dung cuộc họp</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Ngày</th>
-                            <th scope="col">Giờ</th>
-                            <th scope="col">Nội dung cuộc họp</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td rowspan="2">Thứ Hai</td>
-                            <td>08:30 - 09:30</td>
-                            <td>Họp giao ban đầu tuần</td>
-                        </tr>
-                        <tr>
-                            <td>14:00 - 15:00</td>
-                            <td>Rà soát tiến độ dự án</td>
-                        </tr>
-                        <tr>
-                            <td>Thứ Ba</td>
-                            <td colspan="2">09:00 - 12:00 | Hội nghị kế hoạch quý</td>
-                        </tr>
-                        <tr>
-                            <td>Thứ Tư</td>
-                            <td>13:30 - 14:30</td>
-                            <td>Đào tạo nội bộ</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <section class="box-demo" aria-labelledby="cards-title">
+                <h2 id="cards-title">So sánh kích thước hộp</h2>
+                <p class="box-intro">Mỗi thẻ có cùng width, height, padding, border và margin. Chỉ cách tính kích thước hộp thay đổi.</p>
+                <div class="card-list">
+                    <div class="card">
+                        <h3>Thẻ 1 · Content-box</h3>
+                        <p>280 × 150 px là kích thước phần nội dung. Padding và border được cộng thêm vào bên ngoài.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Thẻ 2 · Border-box</h3>
+                        <p>280 × 150 px đã bao gồm nội dung, padding và border.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Thẻ 3 · Border-box</h3>
+                        <p>Cùng kích thước với thẻ 2, nhưng dùng màu nền đỏ để dễ nhận biết.</p>
+                    </div>
+                </div>
             </div>
         </main>
     </body>
