@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Biểu mẫu học viên</title>
+        <title>Đăng ký người dùng</title>
         <style>
             :root {
                 color-scheme: light;
@@ -224,50 +224,19 @@
     <body>
         <header class="page-header">
             <p>Bài thực hành HTML</p>
-            <h1>Biểu mẫu học viên</h1>
+            <h1>Đăng ký người dùng</h1>
         </header>
         <main>
-            <section class="form-section" aria-labelledby="part-one-title">
+            <section class="form-section" aria-labelledby="registration-title">
                 <div class="section-heading">
-                    <span class="section-number">PHẦN 1</span>
-                    <h2 id="part-one-title">Thông tin cá nhân</h2>
+                    <span class="section-number">ĐĂNG KÝ</span>
+                    <h2 id="registration-title">Thông tin người dùng</h2>
                 </div>
-                <form>
+                <form action="http://demo.codegym.vn/6/registration_form/register.php" method="POST">
                     <div class="field-grid">
                         <label class="field">
                             Họ và tên
-                            <input type="text" name="yourname" autocomplete="name">
-                        </label>
-                        <label class="field">
-                            Email
-                            <input type="email" name="email" autocomplete="email">
-                        </label>
-                        <fieldset class="wide">
-                            <legend>Sở thích</legend>
-                            <div class="choices">
-                                <label class="choice"><input type="checkbox" name="hobby" value="reading"> Đọc sách</label>
-                                <label class="choice"><input type="checkbox" name="hobby" value="music"> Âm nhạc</label>
-                                <label class="choice"><input type="checkbox" name="hobby" value="sports"> Thể thao</label>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit">Gửi thông tin</button>
-                        <button type="reset">Nhập lại</button>
-                    </div>
-                </form>
-            </section>
-
-            <section class="form-section" aria-labelledby="part-two-title">
-                <div class="section-heading">
-                    <span class="section-number">PHẦN 2</span>
-                    <h2 id="part-two-title">Đăng ký học viên</h2>
-                </div>
-                <form>
-                    <div class="field-grid">
-                        <label class="field">
-                            Họ và tên
-                            <input type="text" name="fullname" autocomplete="name" required>
+                            <input type="text" name="name" autocomplete="name" required>
                         </label>
                         <label class="field">
                             Email
@@ -275,57 +244,19 @@
                         </label>
                         <label class="field">
                             Số điện thoại
-                            <input type="tel" name="phone" autocomplete="tel">
-                        </label>
-                        <label class="field">
-                            Ngày sinh
-                            <input type="date" name="birthday">
+                            <input type="tel" name="phone" autocomplete="tel" required>
                         </label>
                         <fieldset>
                             <legend>Giới tính</legend>
                             <div class="choices">
-                                <label class="choice"><input type="radio" name="gender" value="male"> Nam</label>
+                                <label class="choice"><input type="radio" name="gender" value="male" required> Nam</label>
                                 <label class="choice"><input type="radio" name="gender" value="female"> Nữ</label>
                                 <label class="choice"><input type="radio" name="gender" value="other"> Khác</label>
                             </div>
                         </fieldset>
-                        <label class="field">
-                            Khóa học
-                            <select name="course">
-                                <option value="">-- Chọn khóa học --</option>
-                                <option value="html-css">HTML &amp; CSS</option>
-                                <option value="javascript">JavaScript</option>
-                                <option value="java">Java</option>
-                                <option value="python">Python</option>
-                            </select>
-                        </label>
-                        <label class="field wide">
-                            Địa chỉ
-                            <textarea name="address" autocomplete="street-address"></textarea>
-                        </label>
-                        <fieldset>
-                            <legend>Hình thức học</legend>
-                            <div class="choices">
-                                <label class="choice"><input type="radio" name="study_type" value="online"> Online</label>
-                                <label class="choice"><input type="radio" name="study_type" value="offline"> Offline</label>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Sở thích</legend>
-                            <div class="choices">
-                                <label class="choice"><input type="checkbox" name="hobby" value="reading"> Đọc sách</label>
-                                <label class="choice"><input type="checkbox" name="hobby" value="music"> Âm nhạc</label>
-                                <label class="choice"><input type="checkbox" name="hobby" value="sports"> Thể thao</label>
-                            </div>
-                        </fieldset>
-                        <label class="field wide">
-                            Ghi chú
-                            <textarea name="note"></textarea>
-                        </label>
                     </div>
                     <div class="form-actions">
-                        <button type="submit">Đăng ký</button>
-                        <button type="reset">Nhập lại</button>
+                        <button type="submit">Gửi đăng ký</button>
                     </div>
                 </form>
             </section>
