@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Danh sách sản phẩm</title>
+        <title>Lịch họp công ty</title>
         <style>
             :root {
                 color-scheme: light;
@@ -383,6 +383,11 @@
                 text-align: center;
             }
 
+            .product-table td[colspan="2"] {
+                color: #1e665b;
+                font-weight: 700;
+            }
+
             @media (max-width: 620px) {
                 .page-header {
                     padding: 25px 20px;
@@ -410,40 +415,38 @@
     </head>
     <body>
         <header class="page-header">
-            <p>DANH MỤC</p>
-            <h1>Danh sách sản phẩm</h1>
+            <p>LỊCH LÀM VIỆC</p>
+            <h1>Lịch họp công ty</h1>
         </header>
         <main>
             <div class="table-wrap">
                 <table class="product-table">
-                    <caption>Danh sách sản phẩm hiện có</caption>
+                    <caption>Lịch họp và nội dung cuộc họp</caption>
                     <thead>
                         <tr>
-                            <th scope="col">Tên sản phẩm</th>
-                            <th scope="col">Giá</th>
-                            <th scope="col">Số lượng</th>
+                            <th scope="col">Ngày</th>
+                            <th scope="col">Giờ</th>
+                            <th scope="col">Nội dung cuộc họp</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Bàn phím cơ</td>
-                            <td>1.250.000 ₫</td>
-                            <td>12</td>
+                            <td rowspan="2">Thứ Hai</td>
+                            <td>08:30 - 09:30</td>
+                            <td>Họp giao ban đầu tuần</td>
                         </tr>
                         <tr>
-                            <td>Chuột không dây</td>
-                            <td>450.000 ₫</td>
-                            <td>24</td>
+                            <td>14:00 - 15:00</td>
+                            <td>Rà soát tiến độ dự án</td>
                         </tr>
                         <tr>
-                            <td>Tai nghe Bluetooth</td>
-                            <td>890.000 ₫</td>
-                            <td>8</td>
+                            <td>Thứ Ba</td>
+                            <td colspan="2">09:00 - 12:00 | Hội nghị kế hoạch quý</td>
                         </tr>
                         <tr>
-                            <td>Màn hình 24 inch</td>
-                            <td>3.200.000 ₫</td>
-                            <td>5</td>
+                            <td>Thứ Tư</td>
+                            <td>13:30 - 14:30</td>
+                            <td>Đào tạo nội bộ</td>
                         </tr>
                     </tbody>
                 </table>
